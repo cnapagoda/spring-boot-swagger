@@ -36,5 +36,4 @@ public class ApplicationConfig {
                 .contact(contact)
                 .build();
     }
-
 }

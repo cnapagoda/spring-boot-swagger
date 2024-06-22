@@ -2,4 +2,4 @@
 
 Spring Boot Swagger Integration Sample Project
 
-Please refer [Integrating Swagger with Spring Boot REST API](http://blog.napagoda.com/2017/09/integrating-swagger-with-spring-boot.html) blog post for more technical info
+Please refer [Integrate Swagger 3 with Spring Boot Rest API](https://blog.napagoda.com/2024/06/integrate-swagger-3-with-spring-boot3-api.html) blog post for more technical info

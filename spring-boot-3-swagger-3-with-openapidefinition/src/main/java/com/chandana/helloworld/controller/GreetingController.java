@@ -31,7 +31,7 @@ public class GreetingController {
     @Operation(summary = "Get example by ID", description = "Retrieve an example resource by its ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful operation"),
-            @ApiResponse(responseCode = "404", description = "Example not found")
+            @ApiResponse(responseCode = "404", description = "Greeting not found")
     })
     public ResponseEntity<GreetingResponse> getExample(
             @PathVariable @Parameter(allowEmptyValue = false, required = true) int id) {
@@ -45,7 +45,7 @@ public class GreetingController {
     @PostMapping
     @Operation(summary = "Create a new example", description = "Create a new example resource")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Example created"),
+            @ApiResponse(responseCode = "201", description = "Greeting created"),
             @ApiResponse(responseCode = "400", description = "Invalid input")
     })
     public ResponseEntity<GreetingResponse> createExample(@RequestBody GreetingRequest request) {
@@ -58,8 +58,8 @@ public class GreetingController {
     @PutMapping("/{id}")
     @Operation(summary = "Update an example by ID", description = "Update an existing example resource by its ID")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Example updated"),
-            @ApiResponse(responseCode = "404", description = "Example not found")
+            @ApiResponse(responseCode = "200", description = "Greeting updated"),
+            @ApiResponse(responseCode = "404", description = "Greeting not found")
     })
     public ResponseEntity<GreetingResponse> updateExample(
             @PathVariable @Parameter(allowEmptyValue = false, required = true) int id,
@@ -75,8 +75,8 @@ public class GreetingController {
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete an example by ID", description = "Delete an example resource by its ID")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", description = "Example deleted"),
-            @ApiResponse(responseCode = "404", description = "Example not found")
+            @ApiResponse(responseCode = "204", description = "Greeting deleted"),
+            @ApiResponse(responseCode = "404", description = "Greeting not found")
     })
     public ResponseEntity<Void> deleteExample(
             @PathVariable @Parameter(allowEmptyValue = false, required = true) int id) {

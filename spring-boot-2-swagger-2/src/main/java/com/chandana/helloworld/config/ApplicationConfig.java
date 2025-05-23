@@ -1,39 +1,25 @@
 package com.chandana.helloworld.config;
 
-import org.springframework.context.annotation.Bean;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * Configuration class for OpenAPI API documentation.
+ * Defines the general API information such as title, version, contact, and license.
+ */
 @Configuration
-@EnableSwagger2
+@OpenAPIDefinition(
+    info = @Info(
+        title = "Greeting Api Title",
+        version = "1.0.0",
+        description = "Greeting Api Definition",
+        license = @License(name = "Apache 2.0", url = "http://www.apache.org/licenses/LICENSE-2.0"),
+        contact = @Contact(name = "Chandana Napagoda", url = "http://blog.napagoda.com", email = "cnapagoda@gmail.com")
+    )
+)
 public class ApplicationConfig {
 
-    @Bean
-    public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(getApiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.chandana.helloworld.controllers"))
-                .paths(PathSelectors.any())
-                .build();
-    }
-
-    private ApiInfo getApiInfo() {
-        Contact contact = new Contact("Chandana Napagoda", "http://blog.napagoda.com", "cnapagoda@gmail.com");
-        return new ApiInfoBuilder()
-                .title("Greeting Api Title")
-                .description("Greeting Api Definition")
-                .version("1.0.0")
-                .license("Apache 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0")
-                .contact(contact)
-                .build();
-    }
 }
